@@ -27,5 +27,3 @@ console.log(evenNumbers)
 //Filter function and callback function to use arrow function
 const evenNumbers2 = numbers.filter((num) => num%2===0)
 console.log(evenNumbers2)
-
-
