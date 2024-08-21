@@ -46,5 +46,5 @@ console.log(belowFreezing)
 
 //FILTER & Arrow Function
 console.log("\nFILTER & Arrow Function")
-const belowFreezing2 =  temperatures.filter(ele => ele<0)
+const belowFreezing2 =  temperatures.filter(ele => ele < 0)
 console.log(belowFreezing2)
