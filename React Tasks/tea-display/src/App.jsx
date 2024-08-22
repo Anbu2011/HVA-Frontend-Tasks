@@ -14,10 +14,9 @@ function App() {
     <>
     <div>
       {teaArray.map((ele) => ( 
-        <TeaDisplay tea={ele} />
+        <TeaDisplay tea={ele}/>
       ))}
     </div>
-      
     </>
   )
 }
