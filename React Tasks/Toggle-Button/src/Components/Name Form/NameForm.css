@@ -1,0 +1,31 @@
+form{
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-flex;
+}
+.submitBtn{
+    height: 25px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: blanchedalmond;
+    font-weight: 600;
+}
+.submitBtn:hover{
+    opacity: 0.8;
+}
+.submitBtn:active{
+    opacity: 0.5;
+}
+
+.nameLabel{
+    color: black;
+    font-weight: 600;
+}
+
+input{
+    border: 1px solid black;
+    margin-right: 10px;
+    height: 20px;
+    outline: none;
+}
