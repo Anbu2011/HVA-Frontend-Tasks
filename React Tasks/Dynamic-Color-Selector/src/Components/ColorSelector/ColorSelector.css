@@ -1,0 +1,41 @@
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}  
+
+.btns button{
+    padding: 0.6em 1.2em;
+    margin-right: 10px;
+    
+    border: 3px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button:hover {
+    border-color: wheat;
+}
+button:active{
+    opacity: 0.5;
+}
+
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.red{
+    background-color: red;
+}
+.gray{
+    background-color: gray;
+}
+.darkmagenta{
+    background-color: darkmagenta;
+}
