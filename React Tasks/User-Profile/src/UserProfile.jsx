@@ -1,16 +1,19 @@
 import React from 'react'
 import './UserProfile.css'
-const UserProfile = () => {
-    
+
+const UserProfile = (props) => {
+    const {each} = props
+    const {name , age , bio} = each
+
     return (
     <>
         
         <div className='profile'>
-            <p>Name : Ajay</p>
-            <p>Age : 21</p>
-            <p>Bio : Software Engineer</p> 
+            <p>Name : {name}</p>
+            <p>Age : {age}</p>
+            <p>Bio : {bio}</p>
         </div>
-        
+    
     </>
   )
 }

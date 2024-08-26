@@ -1,3 +1,8 @@
 .profile{
     font-size: 22px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: whitesmoke;
+    font-weight: 600;
 }
