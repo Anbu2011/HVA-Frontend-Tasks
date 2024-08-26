@@ -3,17 +3,17 @@ import './CommentInput.css'
 import { useState } from 'react'
 
 const CommentInput = (props) => {
-    const {key1} = props
-    const [comment , setComment] = useState("")
+    const {onAddComment} = props
+    const [newComment , setNewComment] = useState("")
     
     const handleChange = (event)=>{ 
-        setComment(event.target.value)
+        setNewComment(event.target.value)
     }
 
     const handleSubmit = (event) =>{
         event.preventDefault()
-        key1(comment)
-        setComment("")
+        onAddComment(newComment)
+        setNewComment("")
     }
 
   return (
@@ -25,7 +25,7 @@ const CommentInput = (props) => {
             <form>
                 <div>
                     <label className="comment-label" htmlFor="comment">Comment : </label>
-                    <input type="text" value={comment} onChange={handleChange} placeholder='Type Your Comment'/> 
+                    <input type="text" value={newComment} onChange={handleChange} placeholder='Type Your Comment'/> 
                 </div> 
                 <div>
                     <button onClick={handleSubmit}>Submit</button>

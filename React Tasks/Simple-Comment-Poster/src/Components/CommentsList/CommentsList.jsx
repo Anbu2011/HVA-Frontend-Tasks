@@ -1,8 +1,7 @@
 import React from 'react'
 import './CommentsList.css'
 
-const CommentsList = ({display}) => {
-
+const CommentsList = ({displayComments}) => {
 
   return (
 
@@ -12,7 +11,7 @@ const CommentsList = ({display}) => {
       </div>
 
       <div className='display'>
-        {display.map((items, index) => (<div key={index}> {items} </div>))}
+        {displayComments.map((eachComment, index) => (<div key={index}> {eachComment} </div>))}
       </div>
 
     </>
