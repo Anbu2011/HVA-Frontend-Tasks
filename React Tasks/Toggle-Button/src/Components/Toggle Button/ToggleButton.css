@@ -23,7 +23,6 @@
     /* content: "ON"; */
 }
 
-
 .checkbox:checked + .toggle{
     background-color: aqua;
 }

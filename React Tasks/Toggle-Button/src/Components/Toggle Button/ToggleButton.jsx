@@ -14,7 +14,9 @@ const ToggleButton = () => {
         <input type="checkbox" id="switch" className="checkbox" onChange={handleChange}/>
         <label htmlFor="switch" className="toggle"></label>
         
-        {state ? (<p style={{color:'black', fontSize:'22px'}}>ON</p>) : (<p style={{color:'black', fontSize:'22px'}}>OFF</p>)}
+        <p style={{color:'black', fontSize:'22px'}}>
+          {state ? 'ON' : 'OFF'}
+        </p>
     </div>
     
   )

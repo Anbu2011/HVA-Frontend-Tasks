@@ -5,7 +5,7 @@ const ButtonCount = () => {
 
     const [count, setCount] = useState(0);
 
-    const handleChange = (event) =>{
+    const handleChange = () =>{
         setCount(count+1)
     }
   return (
