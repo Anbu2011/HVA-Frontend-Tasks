@@ -2,7 +2,7 @@ import React from 'react'
 import './ColorSelector.css'
 
 const ColorSelector = (props) => {
-  const {func} = props
+  const {onColorChange} = props
   return (
     <>
       <div>
@@ -10,16 +10,13 @@ const ColorSelector = (props) => {
           <h2>Click Any of the Button to see the Background Color</h2>
       </div>
       <div className='btns'>
-          <button className='green' value="green" onClick={() => func(event.target.value)}>Green</button>
-          <button className='blue' value="blue" onClick={() => func(event.target.value)}>Blue</button>
-          <button className='red' value="red" onClick={() => func(event.target.value)}>Red</button>
-          <button className='gray' value="gray" onClick={() => func(event.target.value)}>Gray</button>
-          <button className='darkmagenta' value="darkmagenta" onClick={() => func(event.target.value)}>Darkmagenta</button>
+          <button className='green' value="green" onClick={(event) => onColorChange(event)}>Green</button>
+          <button className='blue' value="blue" onClick={(event) => onColorChange(event)}>Blue</button>
+          <button className='red' value="red" onClick={(event) => onColorChange(event)}>Red</button>
+          <button className='gray' value="gray" onClick={(event) => onColorChange(event)}>Gray</button>
+          <button className='darkmagenta' value="darkmagenta" onClick={(event) => onColorChange(event)}>Darkmagenta</button>
       </div>
     </>
-    
-
-    
   )
 }
 
