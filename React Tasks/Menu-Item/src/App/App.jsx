@@ -1,5 +1,5 @@
 import './App.css'
-import MenuItem from './MenuItem'
+import MenuItem from '../MenuItem/MenuItem'
 
 function App() {
   
@@ -13,9 +13,12 @@ function App() {
     <>
       <div>
         <h1>Menu Items</h1>
-        {menuArray.map((ele) => (
-           <MenuItem items={ele}/>
-        ))}
+        <div className="grid-container">
+          {menuArray.map((element) => (
+            <MenuItem items={element}/>
+          ))}
+        </div>
+        
       </div>
     </>
   )
