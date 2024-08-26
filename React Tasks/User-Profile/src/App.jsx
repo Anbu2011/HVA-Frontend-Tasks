@@ -9,10 +9,6 @@ function App() {
     {name:'Gopu', age:24},
   ]
 
-  const showBio = (bio) => {
-    alert(bio)
-  }
-
   return (
     <>
 
@@ -20,7 +16,7 @@ function App() {
         <h1>User Profile</h1>
       </div>
 
-      {users.map((ele) => <UserProfile  each={ele} fn={showBio} />)} {/**/}
+      {users.map((ele) => <UserProfile  each={ele} />)} {/**/}
       
     </>
   )

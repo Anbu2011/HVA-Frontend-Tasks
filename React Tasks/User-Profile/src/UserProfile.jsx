@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './UserProfile.css'
 
 const UserProfile = (props) => {
-    const {each , fn} = props
+    const {each} = props
     const {name , age , bio} = each
+
+    const [showBio, setShowBio] = useState("")
+    const [isVisible, setIsVisible] = useState(false)
+    
+    const toggleFun = () =>{
+        setIsVisible(prevState => !prevState);
+    };
+
+    const funBio = (bioValue) =>{
+        setShowBio(bioValue);
+    };
+
     
     return (
     <>
@@ -11,7 +23,11 @@ const UserProfile = (props) => {
         <div className='profile'>
             <p>Name : {name}</p>
             <p>Age : {age}</p>
-            <button onClick={() => fn(bio)}>Show Details</button>
+
+            {showBio && isVisible && <p style={{color:'black'}}>Bio : {showBio}</p>}
+            <button onClick={() => {funBio(bio);  {toggleFun(true)};}}>
+                {showBio && isVisible ? ('Hide Bio') : ('Show Bio')}
+            </button>
         </div>
         
     </>
