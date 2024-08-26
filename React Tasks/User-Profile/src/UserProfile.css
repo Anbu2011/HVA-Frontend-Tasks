@@ -6,3 +6,25 @@
     background-color: whitesmoke;
     font-weight: 600;
 }
+
+button {
+    border-radius: 8px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    background-color: wheat;
+}
+button:hover {
+    border-color: rgb(5, 238, 36);
+    opacity: 0.8;
+}
+button:active {
+    border-color: blueviolet;
+    opacity: 1;
+}
