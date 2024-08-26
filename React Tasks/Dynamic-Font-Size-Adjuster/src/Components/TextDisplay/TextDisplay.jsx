@@ -3,11 +3,11 @@ import './TextDisplay.css'
 
 const TextDisplay = (props) => {
 
-  const {display} = props
+  const {displayFontSize} = props
 
   return (
-    <div className='display-font'>
-      <h1 style={{fontSize:`${display}`}}>Font size Checker - {display}</h1>
+    <div className='display-font-size'>
+      <p style={{fontSize:`${displayFontSize}`}}>Font size Checker - {displayFontSize}</p>
     </div>
   )
 }
