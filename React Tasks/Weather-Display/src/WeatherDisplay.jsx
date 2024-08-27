@@ -1,13 +1,17 @@
 import React from 'react'
 import './WeatherDisplay.css'
-const WeatherDisplay = () => {
+
+
+const WeatherDisplay = (props) => {
+
+    const {temperature, condition, location} = props.weather
+
   return (
     <>
         <div className='weather'>
-            <h1>Weather  Display</h1>
-            <p>Temperature : 20° C</p>
-            <p>Condition: Sunny</p>
-            <p>Location : New York</p>
+            <p><strong>Temperature : </strong>{temperature}</p>
+            <p><strong>Condition : </strong>{condition}</p>
+            <p><strong>Location : </strong>{location}</p>
         </div>
     </>
   )
