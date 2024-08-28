@@ -1,5 +1,5 @@
 import './App.css'
-import WeatherDisplay from './WeatherDisplay'
+import WeatherDisplay from '../WeatherDisplay/WeatherDisplay'
 
 function App() {
   
