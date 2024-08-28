@@ -1,7 +1,9 @@
 import React from 'react'
 import './CommentsList.css'
 
-const CommentsList = ({displayComments}) => {
+const CommentsList = (props) => {
+  
+  const {displayComments} = props
 
   return (
 

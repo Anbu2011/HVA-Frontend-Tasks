@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 const CommentInput = (props) => {
     const {onAddComment} = props
+    
     const [newComment , setNewComment] = useState("")
     
     const handleChange = (event)=>{ 
