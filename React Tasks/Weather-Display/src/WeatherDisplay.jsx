@@ -3,8 +3,10 @@ import './WeatherDisplay.css'
 
 
 const WeatherDisplay = (props) => {
+  const {weather, onclickchange} = props
+  const {temperature, condition, location} = weather
 
-    const {temperature, condition, location} = props.weather
+  
 
   return (
     <>
@@ -12,6 +14,7 @@ const WeatherDisplay = (props) => {
             <p><strong>Temperature : </strong>{temperature}</p>
             <p><strong>Condition : </strong>{condition}</p>
             <p><strong>Location : </strong>{location}</p>
+            <button onClick={() => onclickchange(location)}>Update</button>
         </div>
     </>
   )

@@ -12,12 +12,16 @@ function App() {
 
   ]
 
+  const update = (location) => {  
+    alert(`Weather update requested for ${location}`)
+  }
+
   return (
     <>
       <h1>Weather Display</h1>
       <div>
         {weatherArray.map((elements) => (
-          <WeatherDisplay weather={elements}  />
+          <WeatherDisplay weather={elements} onclickchange={update} />
         ))}
       </div>
       

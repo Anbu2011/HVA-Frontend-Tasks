@@ -14,3 +14,20 @@ h1 {
     background-color: beige;
     margin-bottom: 10px;
 }
+
+button {
+    border-radius: 8px;
+    border: 2px solid black;
+    padding: 0.2em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    
+    cursor: pointer;
+    transition: border-color 0.25s;
+    margin-bottom: 5px;
+}
+button:hover {
+    border-color: #646cff;
+}
+  
