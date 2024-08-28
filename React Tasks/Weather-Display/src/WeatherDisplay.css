@@ -1,33 +1,75 @@
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+.user-input{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
 }
 
+label{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+input{
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 20px;
+    width: 250px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.submit-button {
+    border-radius: 8px;
+    border: 2px solid black;
+    padding: 0.18em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.submit-button:hover {
+    border: 2px solid #ff00ea;
+}
+.submit-button:active{
+    opacity: 0.8;
+}
+
+.weather-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .weather{
     border: 2px solid black;
-    height: auto;
-    width: auto;
+    height: 300px;
+    width: 500px;
     border-radius: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 22px;
     color: black;
     background-color: beige;
     margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+h2 {
+    font-size: 3em;
+    line-height: 0.2;
 }
 
-button {
-    border-radius: 8px;
-    border: 2px solid black;
-    padding: 0.2em 1em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: 'Times New Roman', Times, serif;
-    
-    cursor: pointer;
-    transition: border-color 0.25s;
-    margin-bottom: 5px;
+p{
+    display: flex;
+    flex-direction: row;
 }
-button:hover {
-    border-color: #646cff;
+strong{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    justify-content: right;
+    padding-right: 5px;
 }
-  
