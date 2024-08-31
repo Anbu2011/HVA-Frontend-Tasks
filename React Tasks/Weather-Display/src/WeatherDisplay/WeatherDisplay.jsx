@@ -7,21 +7,30 @@ const WeatherDisplay = () => {
   const [location, setLocation] = useState("")
   const [fullLocation, setFullLocation] = useState("")
   const [displayWeather, setDisplayWeather] = useState(null)
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleLocationChange = (event) =>{
     setLocation(event.target.value)
+    setErrorMessage('')
+    setDisplayWeather("")
   }
 
   const handleLocationSubmit = () =>{
     setFullLocation(location)
     setLocation("")
+    setDisplayWeather("")
+    if(!location){
+      setErrorMessage("Please Enter Your City/Town")
+    }
+    
   }
-
+  
   const getWeatherData = async () => {
     try {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${fullLocation}&appid=7ec993d4f8aec15578e1a6bf1481addc&units=metric`);
       setDisplayWeather(response.data);
     } catch (error) {
+      setErrorMessage(error.response.data.message)
       console.error('Error fetching weather data:', error);
     }
   };
@@ -31,6 +40,7 @@ const WeatherDisplay = () => {
       getWeatherData();
     }
   }, [fullLocation]); 
+  
   
   return (
     <>  
@@ -50,8 +60,9 @@ const WeatherDisplay = () => {
             <p><strong>Country : </strong>{displayWeather.sys.country}</p>
           </div>
         )}
+        {errorMessage && <p className='error-message'>{errorMessage}</p>}
+        
       </div>
-      
 
     </>
   )

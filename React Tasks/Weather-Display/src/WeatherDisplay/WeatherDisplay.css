@@ -73,3 +73,10 @@ strong{
     justify-content: right;
     padding-right: 5px;
 }
+
+.error-message{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0;
+    color: red;
+}
