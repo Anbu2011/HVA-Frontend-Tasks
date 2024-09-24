@@ -1,9 +1,9 @@
-function areaOfRectangle(width, height){                                      //CALLBACK FUNCTION
-    return width * height
+function areaOfRectangle(width, length){                                      //CALLBACK FUNCTION
+    return width * length
 }
 
 function areaOfCircle(radius){                                                //CALLBACK FUNCTION
-    return 3.14 * radius**2
+    return 3.14159 * radius**2
 }
 
 function areaOfTriangle(base, height){                                        //CALLBACK FUNCTION
