@@ -11,7 +11,7 @@ class Expense{
 
 function displayExpenses(expenses){
     expenses.forEach(ele => {
-        console.log(`${ele.name} - ${ele.amount} (${ele.date})`)
+        console.log(`${ele.name} - $${ele.amount} (${ele.date})`)
     });
 }
 
@@ -24,30 +24,40 @@ function addExpense(id, name, amount, date, category, paymentMethod){
 
 function updateExpense(id,amount){
     const update = expenses.find(ele => ele.id === id)
-    update.amount = amount
+    if(update){
+      update.amount = amount
+    } else{
+      console.log('Id not found')
+    }
+    
     console.log("\n Updated Amount in expenses",expenses)
 }
 
 function updateExpenseWithMap(id,amount){
     const updateWithMap = expenses.map(ele =>{
         if(ele.id === id){
-            ele.amount = amount
+            return new Expense(
+              ele.id,
+              ele.name,
+              amount,
+              ele.date,
+              ele.category,
+              ele.paymentMethod
+            )
         }
         return ele
     })
-    console.log("\nNew Array Updated with Map", updateWithMap)
+    expenses = updateWithMap
+    console.log("\nNew Array Updated with Map", expenses)
 }
 
 function removeExpense(id){
-    const remove_expense = expenses.filter(ele => ele.id !== id)
-    expenses.length = 0
-    expenses.push(...remove_expense)
-    
+    expenses = expenses.filter(ele => ele.id !== id);
     console.log("\nExpenses Array with Removed Expense",expenses)
 
 }
 
-const expenses = [
+let expenses = [
     {id: 301, name: "Groceries", amount: 150.75, date: "2024-08-01", category: "Food", paymentMethod: "Credit Card"},
     {id: 302, name: "Electricity Bill", amount: 80.00, date: "2024-08-05", category: "Utilities", paymentMethod: "Bank Transfer"},
     {id: 303, name: "Internet Subscription", amount: 50.00, date: "2024-08-10", category: "Utilities", paymentMethod: "Credit Card"},

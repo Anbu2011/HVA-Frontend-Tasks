@@ -22,29 +22,41 @@ function addTask(id, description, dueDate, status, priority){
 
 function updateTask(id, status){
     const taskUpdate = tasks.find(ele => ele.id === id)
-    taskUpdate.status = status
+    if(taskUpdate){
+      taskUpdate.status = status
+    } else{
+      console.log('Id not found')
+    }
+    
     console.log("Task Updated Array",tasks)
 }
 
 function updateTaskWithMap(id, status){
     const updateUsingMap = tasks.map(ele => {
         if(ele.id === id){
-            ele.status = status
+          return new Task(
+            ele.id,
+            ele.description,
+            ele.dueDate,
+            status,
+            ele.priority
+          )
+        } else{
+          return ele
         }
-        return ele
+        
     })
     console.log("\nTask Updated Array using Map",updateUsingMap)
 }
 
 function removeTask(id){
-    const NewArray = tasks.filter(ele => ele.id !== id)
-    tasks.length = 0
-    tasks.push(...NewArray)
+    tasks = tasks.filter(ele => ele.id !== id)
+    
     console.log("\nTasks Array with Removed Element",tasks)
 }
 
 
-const tasks = [
+let tasks = [
     {id: 101, description: "Complete JavaScript project",dueDate: "2024-08-25",status: "Incomplete",priority: "High"},
     {id: 102,description: "Prepare for the team meeting",dueDate: "2024-08-22",status: "Incomplete",priority: "Medium"},
     {id: 103,description: "Buy groceries",dueDate: "2024-08-21",status: "Completed",priority: "Low"},

@@ -1,59 +1,69 @@
 class Product{
-    constructor(id, name, price, quantity, category, supplier){
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.category = category;
-        this.supplier = supplier;
-    }
-};
+  constructor(id, name, price, quantity, category, supplier){
+      this.id = id;
+      this.name = name;
+      this.price = price;
+      this.quantity = quantity;
+      this.category = category;
+      this.supplier = supplier;
+  }
+}
 
-const inventory = [
-    {id: 201, name: "Milk", price: 2.50, quantity: 50, category: "Dairy", supplier: "DairyCo"},
-    {id: 202, name: "Bread", price: 1.50, quantity: 100, category: "Bakery", supplier: "BreadWorks"},
-    {id: 203, name: "Eggs", price: 5, quantity: 30, category: "Dairy", supplier: "FarmFresh"},
-    {id: 204, name: "Apples", price: 1.80, quantity: 40, category: "Produce", supplier: "FruitFarm"},
-    {id: 205, name: "Coffee", price: 10, quantity: 20, category: "Beverages", supplier: "BrewMasters"},
-    {id: 206, name: "Chicken Breast", price: 5.00, quantity: 40, category: "Meat", supplier: "MeatMakers"},
+let inventory = [
+
+new Product(201, "Milk", 2.50, 50, "Dairy", "DairyCo"),
+new Product(202, "Bread", 1.50, 100, "Bakery", "BreadWorks"),
+new Product(203, "Eggs", 5, 30, "Dairy", "FarmFresh"),
+new Product(204, "Apples", 1.80, 40, "Produce", "FruitFarm"),
+new Product(205, "Coffee", 10, 20, "Beverages", "BrewMasters"),
+new Product(206, "Chicken Breast", 5.00, 40, "Meat", "MeatMakers")
 ]
 
 function displayProducts(inventory) {
-    inventory.forEach(ele => console.log(`${ele.name} - ${ele.price} (${ele.quantity})`));
+  inventory.forEach(ele => console.log(`${ele.name} - ${ele.price} (${ele.quantity})`));
 }
 
 function addProduct(id, name, price, quantity, category, supplier){
-    const newObj = new Product(id, name, price, quantity, category, supplier)
-    inventory.push(newObj)
-    console.log("Product Added", inventory)
+  const newObj = new Product(id, name, price, quantity, category, supplier)
+  inventory.push(newObj)
+  console.log("Product Added", inventory)
 }
 
 function updateProduct(id,quantity){
-    const update = inventory.find(ele => ele.id===id)
-    if(update){
-        update.quantity = quantity
-    }
-    console.log("Updated Array", inventory)
+  const update = inventory.find(ele => ele.id===id)
+  if(update){
+      update.quantity = quantity
+  } else{
+    console.log('Id not found')
+  }
+  console.log("Updated Array", inventory)
 }
 
 
 function updateProductWithMap(id,quantity){
-    const update2 = inventory.map(ele =>{
-        if (ele.id === id){
-            ele.quantity = quantity
-        }
-        return ele
-    })
-    console.log("Updated Using MAP", update2)
+  const update2 = inventory.map(ele =>{
+    if (ele.id === id){
+      return new Product(
+        ele.id,
+        ele.name,
+        ele.price,
+        quantity,
+        ele.category,
+        ele.supplier
+      )
+    } else{
+      return ele
+    }
+  })
+  inventory = update2
+  console.log("Updated Using MAP", inventory)
 }
 
 function removeProduct(id){
-    const remove = inventory.filter(ele => ele.id !== id)
-    console.log("Array with Removed one object", remove)
-
-    inventory.length = 0  //clear the array
-    inventory.push(...remove)
-    console.log("Inventory with New Array", inventory)
+  inventory = inventory.filter(ele => ele.id !== id)
+  
+  console.log("Inventory with New Array", inventory)
+  
 }
 
 displayProducts(inventory)

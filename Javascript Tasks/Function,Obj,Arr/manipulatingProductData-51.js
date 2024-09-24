@@ -8,28 +8,28 @@ const products = [
 
 function displayProducts(products){
     products.forEach(ele => {
-        console.log(`${ele.category} - $${ele.price}`)
+        console.log(`${ele.name} - $${ele.price}`)
     });
 
     const productsWithTax = products.map(ele =>{
-        return {...ele, priceWithTax : ele.price + ele.price*10/100}
+        return {...ele, priceWithTax : (ele.price + ele.price*10/100).toFixed(2)}
     })
     console.log(productsWithTax)
 
     const foodProducts = products.filter(ele => ele.category==='Food')
     console.log(foodProducts)
 
-    const affordableProducts = productsWithTax.filter(ele => ele.price < 10)
+    const affordableProducts = products.filter(ele => ele.price < 10)
     console.log(affordableProducts)
 
-    const affordableProductsStrings = affordableProducts.map(ele => `${ele.name} - ${ele.priceWithTax}`)
+    const affordableProductsStrings = affordableProducts.map(ele => `${ele.name} - ${ele.price}`)
     console.log(affordableProductsStrings)
 
     var  totalPrice = 0
-    productsWithTax.forEach(ele => {
-        totalPrice += ele.priceWithTax
+    products.forEach(ele => {
+        totalPrice += ele.price
     });
-    console.log("Total Price is ",totalPrice)
+    console.log(`Total Price is $${totalPrice.toFixed(2)}`)
 }
 
 displayProducts(products)

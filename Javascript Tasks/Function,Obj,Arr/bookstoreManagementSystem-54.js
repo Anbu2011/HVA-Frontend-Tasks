@@ -7,12 +7,12 @@ class Book{
         this.quantity = quantity;
         this.genre = genre;
         this.publishedYear = publishedYear;
-    };
-};
+    }
+}
 
 function displayBooks(inventory){
     inventory.forEach(ele => {
-        console.log(`${ele.title} - ${ele.author} (${ele.price})`)
+        console.log(`${ele.title} - ${ele.author} ($${ele.price})`)
     });
 }
 
@@ -25,29 +25,42 @@ function addBook(id , title, author, price, quantity, genre, publishedYear){
 
 function updateBook(id,quantity){
     const update_quantity = inventory.find(ele => ele.id === id)
-    update_quantity.quantity = quantity
+    if(update_quantity){
+      update_quantity.quantity = quantity
+    } else{
+      console.log('Id not found')
+    }
     console.log("\nQuantity Updated", inventory)
 }
 
 function updateBookWithMap(id, quantity){
     const updateUsingMap = inventory.map(ele =>{
         if(ele.id === id){
-            ele.quantity = quantity
+          return new Book(
+            ele.id,
+            ele.title,
+            ele.author,
+            ele.price,
+            quantity,
+            ele.genre,
+            ele.publishedYear
+          ) 
+        } else{
+          return ele
         }
-        return ele
+        
     })
     console.log("\nNew Map Array with updated value", updateUsingMap)
 }
 
 function removeBook(id){
-    const newArray = inventory.filter(ele => ele.id !== id)
-    inventory.length = 0
-    inventory.push(...newArray)
+    inventory = inventory.filter(ele => ele.id !== id)
+    
     console.log("New Array ",inventory)
 
 }
 
-const inventory = [
+let inventory = [
     {id: 401, title: "To Kill a Mockingbird", author: "Harper Lee", price: 10.99, quantity: 50, genre: "Fiction", publishedYear: 1960},
     {id: 402, title: "1984", author: "George Orwell", price: 8.99, quantity: 40, genre: "Dystopian", publishedYear: 1949},
     {id: 403, title: "The Great Gatsby", author: "F. Scott Fitzgerald", price: 12.99, quantity: 30, genre: "Classic", publishedYear: 1925},
