@@ -7,12 +7,54 @@
 </head>
 <body>
     <h1>Welcome to My Portfolio</h1>
-    <a href="#">
+    
+      <nav>
         <ul>
-            <li><a href="AboutMe.html">About Me</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Contact.html">Contact</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </a>
+      </nav>
+      
+      <section id="about">
+        <h2>About Me</h2>
+        <img src="ANBU WHITE PIC.jpg" alt="" width="300px" height="300px">
+        <p>I’m Anbu, a recent Computer Science and Engineering graduate from Coimbatore Institute of Technology. I’ve been passionate about web development, focusing on technologies like React.js, Redux, and API integration. I’m also working on backend skills with Node.js and Express.js. I aim to use my tech skills to make a meaningful impact.</p>
+      </section>
+      
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <h3>AI Text Content Detector</h3>
+                <p>Designed and implemented a model to determine a degree of AI-generated content like ChatGPT using BERT and Deep Learning architectures.</p>
+            </li>
+            <li>
+                <h3>Chat Application</h3>
+                <p>Developed a chat bot application in Python integrating a Language Model (LLM) , enabling information retrieval through natural language processing (NLP)</p>
+            </li>
+            <li>
+                <h3>Amazon Price Tracker</h3>
+                <p>Implemented an Amazon Price Tracker in Python , leveraging web scraping and BeautifulSoup , to monitor and notify users of real-time changes in product prices.</p>
+            </li>
+        </ul>
+      </section>
+      
+      <section id="contact">
+        <h2>Contact</h2>
+        <form action="#" method="post">
+            <label for="">Name : </label>
+            <input type="text" name="name"> <br><br>
+    
+            <label for="">Email : </label>
+            <input type="email" name="email"> <br><br>
+    
+            <label for="">Message : </label> 
+            <textarea name="message" id="message" rows="4" cols="50"></textarea> <br><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+      </section>
+    
 </body>
 </html>
