@@ -3,12 +3,12 @@ const fruits = ["apple", "banana", "cherry", "date"]
 //ForEach & Function Expression
 console.log("ForEach & Function Expression")
 fruits.forEach(function callBack(ele){
-    console.log(ele[0].toUpperCase() + ele.slice(1))
+    console.log(ele.toUpperCase())
 })
 
 //ForEach & Arrow Function
 console.log("\nForEach & Arrow Function")
-fruits.forEach(ele => console.log(ele[0].toUpperCase() + ele.slice(1)))
+fruits.forEach(ele => console.log(ele.toUpperCase()))
 
 // Total Characters
 console.log('\nTotal Characters')

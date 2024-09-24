@@ -9,21 +9,21 @@ numbers.forEach(function callBack2(num){
 })
 
 //MAP - as a function expression
-const  squaredNumbers = numbers.map(function sq_num(num){
+squaredNumbers = numbers.map(function sq_num(num){
     return num ** 2;
 })
 console.log(squaredNumbers)
 
 //Map function and callback function to use arrow function
-const  squaredNumbers2 = numbers.map((num) => num**2)
-console.log(squaredNumbers2)
+squaredNumbers = numbers.map((num) => num**2)
+console.log(squaredNumbers)
 
 // Iterate and Create a New Filtered Array Using filter()  & as a function expression.
-const evenNumbers = numbers.filter(function even_num(num){
+evenNumbers = numbers.filter(function even_num(num){
     return num % 2 === 0
 })
 console.log(evenNumbers)
 
 //Filter function and callback function to use arrow function
-const evenNumbers2 = numbers.filter((num) => num%2===0)
-console.log(evenNumbers2)
+evenNumbers = numbers.filter((num) => num%2===0)
+console.log(evenNumbers)

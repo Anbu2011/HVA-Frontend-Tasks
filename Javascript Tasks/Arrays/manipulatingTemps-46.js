@@ -14,37 +14,37 @@ temperatures.forEach((ele) => console.log(ele))
 console.log("\nIn Function Expression")
 temperatures.forEach(function callBack2(ele){
     const fahrenheit = (ele*9/5)+32
-    console.log(`Fahrenheit of ${ele} is ${fahrenheit}`)
+    console.log(fahrenheit)
 })
 
 // Arrow Function
 console.log("\nIn Arrow Function")
 temperatures.forEach(ele => {
     const fahrenheit = (ele*9/5)+32
-    console.log(`Fahrenheit of ${ele} is ${fahrenheit}`)
+    console.log(fahrenheit)
 });
 
 
 //MAP & Function Expression
 console.log("\nMAP & Function Expression")
-const temperaturesInFahrenheit = temperatures.map(function callBack3(ele){
+temperaturesInFahrenheit = temperatures.map(function callBack3(ele){
     return ele*9/5 + 32
 })
-console.log("temperaturesInFahrenheit using MAP & Function Expression",temperaturesInFahrenheit)
+console.log(temperaturesInFahrenheit)
 
 //MAP & Arrow Function
 console.log("\nMAP & Arrow Function")
-const temperaturesInFahrenheit2 = temperatures.map(ele => ele*9/5 + 32)
-console.log("temperaturesInFahrenheit using MAP & Arrow Function", temperaturesInFahrenheit2)
+temperaturesInFahrenheit = temperatures.map(ele => ele*9/5 + 32)
+console.log(temperaturesInFahrenheit)
 
 //FILTER & Function Expression
 console.log("\nFILTER & Function Expression")
-const belowFreezing = temperatures.filter(function callBack(ele){
+belowFreezing = temperatures.filter(function callBack(ele){
     return ele < 0
 })
 console.log(belowFreezing)
 
 //FILTER & Arrow Function
 console.log("\nFILTER & Arrow Function")
-const belowFreezing2 =  temperatures.filter(ele => ele < 0)
-console.log(belowFreezing2)
+belowFreezing =  temperatures.filter(ele => ele < 0)
+console.log(belowFreezing)
