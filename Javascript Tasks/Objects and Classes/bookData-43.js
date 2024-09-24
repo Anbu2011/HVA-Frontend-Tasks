@@ -8,11 +8,11 @@ class Book{
     }
 
     describe(){
-        console.log(`${this.title}-${this.author}(${this.year})`)
+        console.log(`${this.title} - ${this.author} (${this.year})`)
     }
 
     displayGenre(){
-        console.log(`Genre:${this.genre}`)
+        console.log(`Genre: ${this.genre}`)
     }
 }
 
